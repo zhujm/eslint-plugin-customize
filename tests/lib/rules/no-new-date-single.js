@@ -1,5 +1,5 @@
 /**
- * @fileoverview 禁止直接使用new Date格式化字符串
+ * @fileoverview 禁止直接使用 new Date 传入单个参数
  * @author zhujm
  */
 'use strict';
@@ -8,7 +8,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require('../../../lib/rules/no-new-date-string'),
+const rule = require('../../../lib/rules/no-new-date-single'),
   RuleTester = require('eslint').RuleTester;
 
 
@@ -17,7 +17,7 @@ const rule = require('../../../lib/rules/no-new-date-string'),
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester();
-ruleTester.run('no-new-date-string', rule, {
+ruleTester.run('no-new-date-single', rule, {
   valid: [
     {
         code: 'new String()'
@@ -30,7 +30,7 @@ ruleTester.run('no-new-date-string', rule, {
   invalid: [
     {
       code: `new Date('2022/04/11 10:10:10')`,
-      errors: [{ message: '禁止直接使用new Date格式化字符串'}],
+      errors: [{ message: '禁止直接使用 new Date 传入单个参数'}],
     },
   ],
 });
