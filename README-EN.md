@@ -6,7 +6,7 @@ Custom ESLint Rules
 
 #### Supported Rules
 - no-date-parse  Disallow formatting date strings with Date.parse
-- no-new-date-string Disallow the use of new Date format strings
+- no-new-date-single When new Date is prohibited, a single parameter is passed in
 - no-todo-comment  The use of todo comments is prohibited and should be checked for features that need to be improved
 - no-var  Disallow variable declaration with var
 
