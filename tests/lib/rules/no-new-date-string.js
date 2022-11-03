@@ -8,7 +8,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require('../../../lib/rules/no-new-date'),
+const rule = require('../../../lib/rules/no-new-date-string'),
   RuleTester = require('eslint').RuleTester;
 
 
@@ -17,10 +17,13 @@ const rule = require('../../../lib/rules/no-new-date'),
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester();
-ruleTester.run('no-new-date', rule, {
+ruleTester.run('no-new-date-string', rule, {
   valid: [
     {
         code: 'new String()'
+    },
+    {
+        code: 'new Date()'
     }
   ],
 

@@ -6,8 +6,8 @@
 
 #### 包含规则：
 - no-date-parse  禁止使用 Date.parse 格式化字符串
-- no-new-date  禁止使用 new Date 格式化字符串
-- no-todo-comment  禁止使用 todo 注释，应检查是否有需要完善的功能
+- no-new-date-string  禁止使用 new Date 格式化字符串
+- no-todo-comment  禁止提交 todo 注释，应检查是否有需要完善的功能
 - no-var  禁止使用 var 声明变量
 
 ## 安装

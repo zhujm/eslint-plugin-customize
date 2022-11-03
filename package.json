@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-customize",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "自定义规则集",
   "keywords": [
     "eslint",
