@@ -54,4 +54,4 @@ npm install eslint-plugin-customize --save-dev
     }
 }
 ```
-通过 `plugins` 引入，每条规则都需要在 `rule` 中进行配置才会生效。
+通过 `plugins` 引入，每条规则都需要在 `rules` 中进行配置才会生效。
