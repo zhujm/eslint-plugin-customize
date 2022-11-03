@@ -2,14 +2,14 @@
  * @fileoverview 禁止直接使用new Date格式化字符串
  * @author zhujm
  */
-"use strict";
+'use strict';
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-new-date"),
-  RuleTester = require("eslint").RuleTester;
+const rule = require('../../../lib/rules/no-new-date'),
+  RuleTester = require('eslint').RuleTester;
 
 
 //------------------------------------------------------------------------------
@@ -17,15 +17,17 @@ const rule = require("../../../lib/rules/no-new-date"),
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester();
-ruleTester.run("no-new-date", rule, {
+ruleTester.run('no-new-date', rule, {
   valid: [
-    // give me some code that won't trigger a warning
+    {
+        code: 'new String()'
+    }
   ],
 
   invalid: [
     {
-      code: "new Date('2022/04/11 10:10:10')",
-      errors: [{ message: "Fill me in.", type: "Me too" }],
+      code: `new Date('2022/04/11 10:10:10')`,
+      errors: [{ message: '禁止直接使用new Date格式化字符串'}],
     },
   ],
 });

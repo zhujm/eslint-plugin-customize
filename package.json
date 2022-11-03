@@ -12,8 +12,7 @@
   "exports": "./lib/index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha tests --recursive",
-    "test:var": "mocha tests/lib/rules/no-var.js"
+    "test": "mocha tests --recursive"
   },
   "dependencies": {
     "requireindex": "^1.2.0"

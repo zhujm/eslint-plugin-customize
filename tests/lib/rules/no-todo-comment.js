@@ -20,17 +20,17 @@ const ruleTester = new RuleTester();
 ruleTester.run('no-todo-comment', rule, {
   valid: [
     {
-        code: '// 非开头 todo'
+        code: '// 非 todo 开头 '
     },
   ],
 
   invalid: [
     {
         code: '// todo',
-        errors: [{ message: '发现todo注释，请确认是否有未完成的功能'}],
+        errors: [{ message: '发现todo注释:" todo"，检查是否有需要完善的功能'}],
     },{
         code: '// ToDo',
-        errors: [{ message: '发现todo注释，请确认是否有未完成的功能'}],
+        errors: [{ message: `发现todo注释:" ToDo"，检查是否有需要完善的功能`}],
     }
   ],
 });
