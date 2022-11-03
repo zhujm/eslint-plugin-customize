@@ -2,23 +2,40 @@
 
 自定义规则集
 
-## Installation
+简体中文 | [English](./README-EN.md)
 
-You'll first need to install [ESLint](https://eslint.org/):
+#### 包含规则：
+- no-date-parse  禁止使用 Date.parse 格式化字符串
+- no-new-date  禁止使用 new Date 格式化字符串
+- no-todo-comment  禁止使用 todo 注释，应检查是否有需要完善的功能
+- no-var  禁止使用 var 声明变量
+
+## 安装
+
+首先需要安装 [ESLint](https://eslint.org/):
 
 ```sh
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-customize`:
+再安装 `eslint-plugin-customize`:
 
 ```sh
 npm install eslint-plugin-customize --save-dev
 ```
 
-## Usage
-
-Add `customize` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+## 使用
+### 可以通过配置 extends 来引入
+```json
+{
+    "extends": [
+        "plugin:customize/recommended"
+    ]
+}
+```
+通过这种方式配置，所有的 rule 均生效，如果需要调整某个规则可以单独在 `rules` 进行覆盖 
+#### 或者，通过配置 plugins 和 rules
+添加 `customize` 到 `.eslintrc` 配置文件的 `plugins`，可以省略 `eslint-plugin-` 前缀：
 
 ```json
 {
@@ -28,19 +45,13 @@ Add `customize` to the plugins section of your `.eslintrc` configuration file. Y
 }
 ```
 
-
-Then configure the rules you want to use under the rules section.
+然后在 `rules` 配置您要使用的规则。
 
 ```json
 {
     "rules": {
-        "customize/rule-name": 2
+        "customize/no-todo-comment": 2 // 0 = off, 1 = warn, 2 = error
     }
 }
 ```
-
-## Supported Rules
-
-* Fill in provided rules here
-
-
+通过 `plugins` 引入，每条规则都需要在 `rule` 中进行配置才会生效。
